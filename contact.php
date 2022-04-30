@@ -7,15 +7,15 @@ include('includes/dbconnection.php');
 <html lang="en">
   <head>
     <title>BarberKing-Contact us</title>
-    
-    
+
+
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -27,7 +27,7 @@ include('includes/dbconnection.php');
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
 
-    
+
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
@@ -36,16 +36,16 @@ include('includes/dbconnection.php');
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container">
         <a class="navbar-brand" href="index.php">BarberKing</a>
-       
+
         <div class="collapse navbar-collapse" id="ftco-nav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
             <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
-            
+
             <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
             <li class="nav-item"><a href="appointments.php" class="nav-link">Appointments</a></li>
             <li class="nav-item active"><a href="contact.php" class="nav-link">Contact</a></li>
-            
+
             <li class="nav-item"><a href="admin/index.php" class="nav-link">Admin</a></li>
           </ul>
         </div>
@@ -63,7 +63,7 @@ include('includes/dbconnection.php');
         </div>
       </div>
     </section>
-    
+
     <section class="contact-section bg-light">
       <div class="container">
         <div class="row no-gutters d-flex contact-info">
@@ -114,18 +114,18 @@ while ($row=mysqli_fetch_array($ret)) {
         </div>
       </div>
     </section>
-			
-	
+
+
 
    <?php include_once('includes/footer.php');?>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="js/jquery.min.js"></script>
+  <!-- <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -141,7 +141,7 @@ while ($row=mysqli_fetch_array($ret)) {
   <script src="js/scrollax.min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
-    
+  <script src="js/main.js"></script> -->
+
   </body>
 </html>
