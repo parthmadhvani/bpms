@@ -37,24 +37,24 @@ include('includes/dbconnection.php');
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-      <div class="container">
-        <a class="navbar-brand" href="index.php">BarberKing</a>
-       
-        <div class="collapse navbar-collapse" id="ftco-nav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
-            
-            <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
-            <li class="nav-item active"><a href="appointments.php" class="nav-link">Appointments</a></li>
-            <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-            
-            <li class="nav-item"><a href="admin/index.php" class="nav-link">Admin</a></li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.php">BarberKing</a>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="services.php" class="nav-link">Services</a></li>
+
+          <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+          <li class="nav-item active"><a href="appointments.php" class="nav-link">Appointments</a></li>
+          <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
+
+          <li class="nav-item"><a href="admin/index.php" class="nav-link">Admin</a></li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg-2.jpg');"
     data-stellar-background-ratio="0.5">
@@ -85,15 +85,15 @@ include('includes/dbconnection.php');
       </div>
   </section>
   <div class="form">
-  <form class="appointment_form" action="" method="POST">
-            <div class="appointment_form_content">
-            <input type="search" name="search" class="search_input" placeholder="Search Appointment">
-            <input type="submit" name="search-btn" class="search-btn" value="search">
-            </div>
-  </form>
+    <form class="appointment_form" action="" method="POST">
+      <div class="appointment_form_content">
+        <input type="search" name="search" class="search_input" placeholder="Search Appointment">
+        <input type="submit" name="search-btn" class="search-btn" value="search">
+      </div>
+    </form>
   </div>
 
- 
+
 
   <?php
     if(isset($_POST['search-btn']))
@@ -142,35 +142,31 @@ include('includes/dbconnection.php');
             $str_arr = explode (",", $services); 
             // print_r($str_arr);
             ?>
-    <div class="">
-          <!-- <form class="appointment_form" action="" method="POST">
-            <input type="search" name="search" class="search_input" placeholder="Search Appointment">
-            <input type="submit" name="search-btn" class="search-btn" value="search">
-          </form> -->
-          <form  class="appointment_form2" action="" method="POST">
-         <div class="appointment_form2_content">
-         <table class="tbl-30">
-            <tr>
-              <td>Name: </td>
-              <td>
-                <input type="text" name="Name" class="input_other" value="<?php echo $name; ?>">
-              </td>
-            </tr>
+  <div class="">
+    <form class="appointment_form2" action="" method="POST">
+      <div class="appointment_form2_content">
+        <table class="tbl-30">
+          <tr>
+            <td>Name: </td>
+            <td>
+              <input type="text" name="Name" class="input_other" value="<?php echo $name; ?>">
+            </td>
+          </tr>
 
-            <tr>
-              <td>Email: </td>
-              <td>
-                <input type="email" name="Email" class="input_other" value="<?php echo $email; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Services: </td>
-              <td>
+          <tr>
+            <td>Email: </td>
+            <td>
+              <input type="email" name="Email" class="input_other" value="<?php echo $email; ?>">
+            </td>
+          </tr>
+          <tr>
+            <td>Services: </td>
+            <td>
               <div class="col-sm-12">
-                    <div id="list1" class="dropdown-check-list" tabindex="100">
-                      <span class="form-group anchor services_index">Select services</span>
-                        <ul class="items">
-                          <?php $query=mysqli_query($con,"select ServiceName from tblservices");
+                <div id="list1" class="dropdown-check-list" tabindex="100">
+                  <span class="form-group anchor services_index">Select services</span>
+                  <ul class="items">
+                    <?php $query=mysqli_query($con,"select ServiceName from tblservices");
                           while($row=mysqli_fetch_array($query))
                           {
                             $print = false;
@@ -184,72 +180,82 @@ include('includes/dbconnection.php');
                           
                           if($print){
                             ?>
-                                  <li><input name="services[]" value="<?php echo $row['ServiceName'];?>" type="checkbox" checked /> <?php echo $row['ServiceName'];?> </li>
-                            <?php
+                    <li><input name="services[]" value="<?php echo $row['ServiceName'];?>" type="checkbox" checked />
+                      <?php echo $row['ServiceName'];?>
+                    </li>
+                    <?php
                           }
                           else{
-                            ?>	<li><input name="services[]" value="<?php echo $row['ServiceName'];?>" type="checkbox"/> <?php echo $row['ServiceName'];?> </li>
-                            <?php
+                            ?>
+                    <li><input name="services[]" value="<?php echo $row['ServiceName'];?>" type="checkbox" />
+                      <?php echo $row['ServiceName'];?>
+                    </li>
+                    <?php
                           }
-                        } ?> 
-                        </ul>
-                    </div>
+                        } ?>
+                  </ul>
+                </div>
               </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Phone Number: </td>
-              <td>
-                <input type="text" name="PhoneNumber" class="input_other" value="<?php echo $phonenumber; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Date: </td>
-              <td>
-                <input type="date" name="AptDate" class="input_other" value="<?php echo $aptdate; ?>">
-              </td>
-            </tr>
-            <tr>
-              <td>Time: </td>
-              <td>
-                <input type="time" name="AptTime" class="input_other" value="<?php echo $apttime; ?>">
-              </td>
-            </tr>
-            <tr>
-              
-              <td>Location: </td>
-              <td>
+            </td>
+          </tr>
+          <tr>
+            <td>Phone Number: </td>
+            <td>
+              <input type="text" name="PhoneNumber" class="input_other" value="<?php echo $phonenumber; ?>">
+            </td>
+          </tr>
+          <tr>
+            <td>Date: </td>
+            <td>
+              <input type="date" name="AptDate" class="input_other" value="<?php echo $aptdate; ?>">
+            </td>
+          </tr>
+          <tr>
+            <td>Time: </td>
+            <td>
+              <input type="time" name="AptTime" class="input_other" value="<?php echo $apttime; ?>">
+            </td>
+          </tr>
+          <tr>
+
+            <td>Location: </td>
+            <td>
               <div class="col-sm-12">
                 <div class="list_location" class="dropdown-check-list" tabindex="100">
-                    <select name="location">
-                      <option value="">Select Location</option>
-                      <?php $query=mysqli_query($con,"select * from admin");
+                  <select name="location">
+                    <option value="">Select Location</option>
+                    <?php $query=mysqli_query($con,"select * from admin");
                         while($row=mysqli_fetch_array($query))
                         {
                       ?>
-                      <option value="<?php echo $row['franch_name'];?>"><?php echo $row['franch_name'];?></option>
-                      <?php } ?> 
-                    </select>
+                    <option value="<?php echo $row['franch_name'];?>">
+                      <?php echo $row['franch_name'];?>
+                    </option>
+                    <?php } ?>
+                  </select>
                 </div>
               </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Status: </td>
-              <td>
-                <input type="text" name="AptTime" class="input_other" value="<?php echo $aaa; ?>">
-              </td>
-            </tr>
-            <tr>
-            <tr>
-              <td colspan="2">
-                <input type="hidden" name="ID" value="<?php echo $id; ?>">
-                <input type="submit" class="btn-app-submit" name="submit" value="Update Appointment" class="btn-secondary">
-              </td>
-            </tr>
-          </table>
-         </div>
-        </form>
+            </td>
+          </tr>
+          <tr>
+            <td>Status: </td>
+            <td>
+              <input type="text" name="AptTime" class="input_other" value="<?php echo $aaa; ?>">
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <td colspan="2">
+              <input type="hidden" name="ID" value="<?php echo $id; ?>">
+              <input type="submit" class="btn-app-submit" name="submit" value="Update Appointment"
+                class="btn-secondary">
+              <input type="submit" class="btn-app-submit" name="cancel" value="Cancel Appointment"
+                class="btn-secondary">
+            </td>
+          </tr>
+        </table>
+      </div>
+    </form>
   </div>
   <?php
         }
@@ -261,10 +267,19 @@ include('includes/dbconnection.php');
    
     ?>
 
-  
 
-  <?php 
+
+  <?php
+  
+  if(isset($_POST['cancel'])){
+    $id = $_POST['ID'];
+
+    $sql3 = "DELETE from tblappointment WHERE ID = '$id'";
+
+    $res3 = mysqli_query($con,$sql3);
+  }
     //check whether the submit button is clicked or not
+    
     if(isset($_POST['submit'])){
         //echo "Button Clicked";
         //Get all the values from form to update
@@ -300,17 +315,17 @@ include('includes/dbconnection.php');
         //check query execute successfully or not
         if($res2==true){
             ?>
-            <!-- <script>alert("Your Date Has Been Updated")</script> -->
-            <?php
+  <script>alert("Your Date Has Been Updated")</script>
+  <?php
         }
         else{
             //Redirect to manage admin page
             ?>
-            <!-- <script>alert("Your Data Could Not Be Updated")</script> -->
-            <?php
+  <script>alert("Your Data Could Not Be Updated")</script>
+  <?php
         }
     ?>
-    
+
   <?php
     }
 ?>
@@ -322,7 +337,7 @@ include('includes/dbconnection.php');
         stroke="#F96D00" />
     </svg></div>
 
-    <?php include_once('includes/footer.php');?>
+  <?php include_once('includes/footer.php');?>
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-migrate-3.0.1.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -342,168 +357,168 @@ include('includes/dbconnection.php');
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
   <script>
-	  var checkList = document.getElementById('list1');
-checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
-  if (checkList.classList.contains('visible'))
-    checkList.classList.remove('visible');
-  else
-    checkList.classList.add('visible');
+    var checkList = document.getElementById('list1');
+    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+      if (checkList.classList.contains('visible'))
+        checkList.classList.remove('visible');
+      else
+        checkList.classList.add('visible');
 
-  // $str_arr
-  // if(let i=0;$str_arr.length;i++){
+      // $str_arr
+      // if(let i=0;$str_arr.length;i++){
 
-  // }
+      // }
 
-  }
+    }
   </script>
 
-<style>
-.dropdown-check-list {
-  display: inline-block;
-  height: 60px !important;
-  width:100%;
-  padding-top: 1px;
-}
+  <style>
+    .dropdown-check-list {
+      display: inline-block;
+      height: 60px !important;
+      width: 100%;
+      padding-top: 1px;
+    }
 
-.dropdown-check-list .anchor {
-    position: relative;
-    left: 15px;
-    top: 5px;
-    cursor: pointer;
-    display: inline-block;
-    padding: 7px 50px 7px 10px;
-    border: 1px solid;
-    text-transform: uppercase;
-    color: #563b4c;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 2px;
-    width:112%;
-}
+    .dropdown-check-list .anchor {
+      position: relative;
+      left: 15px;
+      top: 5px;
+      cursor: pointer;
+      display: inline-block;
+      padding: 7px 50px 7px 10px;
+      border: 1px solid;
+      text-transform: uppercase;
+      color: #563b4c;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 2px;
+      width: 112%;
+    }
 
-.dropdown-check-list .anchor:after {
-  position: absolute;
-  content: "";
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  padding: 5px;
-  right: 10px;
-  top: 20%;
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  color: red;
-  font-weight: 100000;
-}
+    .dropdown-check-list .anchor:after {
+      position: absolute;
+      content: "";
+      border-left: 2px solid black;
+      border-top: 2px solid black;
+      padding: 5px;
+      right: 10px;
+      top: 20%;
+      -moz-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+      -o-transform: rotate(-135deg);
+      -webkit-transform: rotate(-135deg);
+      transform: rotate(-135deg);
+      color: red;
+      font-weight: 100000;
+    }
 
-.dropdown-check-list .anchor:active:after {
-  right: 8px;
-  top: 21%;
-}
+    .dropdown-check-list .anchor:active:after {
+      right: 8px;
+      top: 21%;
+    }
 
-.dropdown-check-list ul.items {
-  padding: 2px;
-  display: none;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-top: none;
-}
+    .dropdown-check-list ul.items {
+      padding: 2px;
+      display: none;
+      margin: 0;
+      border: 1px solid #ccc;
+      border-top: none;
+    }
 
-.dropdown-check-list ul.items li {
-  list-style: none;
-}
+    .dropdown-check-list ul.items li {
+      list-style: none;
+    }
 
-.services_index{
-	text-align: left;
-}
+    .services_index {
+      text-align: left;
+    }
 
-.dropdown-check-list.visible .anchor {
-  color: #0094ff;
-}
+    .dropdown-check-list.visible .anchor {
+      color: #0094ff;
+    }
 
-.dropdown-check-list.visible .items {
-  display: block;
-  text-align: left;
-}
+    .dropdown-check-list.visible .items {
+      display: block;
+      text-align: left;
+    }
 
-.search_input{
-  width:30% !important;
-  /* margin-left:150px; */
-  margin-bottom:75px;
-  border-radius: 3px;
-}
+    .search_input {
+      width: 30% !important;
+      /* margin-left:150px; */
+      margin-bottom: 75px;
+      border-radius: 3px;
+    }
 
-.appointment_form{
-  /* margin-left:500px; */
-}
+    .appointment_form {
+      /* margin-left:500px; */
+    }
 
-.appointment_form2{
-  /* margin-left:650px;  */
-}
+    .appointment_form2 {
+      /* margin-left:650px;  */
+    }
 
-.appointment_form2_content{
-  text-align: -webkit-center;
-}
+    .appointment_form2_content {
+      text-align: -webkit-center;
+    }
 
-.btn-app-submit{
-  background-color:#f18c8e;
-  margin:10% 0%;
-}
+    .btn-app-submit {
+      background-color: #f18c8e;
+      margin: 10% 0%;
+    }
 
-.btn-app-submit:hover{
-  font-weight: bold;
-}
+    .btn-app-submit:hover {
+      font-weight: bold;
+    }
 
-.appointment_form_content{
-  text-align: center;
-}
-.appointment_form2 .input_other{
-  margin:2px 0px 10px 30px;
-  height: 40px !important;
-    cursor: pointer;
-    display: inline-block;
-    padding: 5px 5px 5px 10px;
-    border: 1px solid;
-    text-transform: uppercase;
-    color: #563b4c;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 2px;
-    width:100%;
-}
+    .appointment_form_content {
+      text-align: center;
+    }
 
-.appointment_form2 .list_location select{
-  margin:2px 0px 10px 30px;
-  height: 40px !important;
-  left:-15px;
-  position: relative;
-    cursor: pointer;
-    display: inline-block;
-    padding: 7px 50px 7px 10px;
-    border: 1px solid;
-    text-transform: uppercase;
-    color: #563b4c;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 2px;
-    width:112%;
-}
+    .appointment_form2 .input_other {
+      margin: 2px 0px 10px 30px;
+      height: 40px !important;
+      cursor: pointer;
+      display: inline-block;
+      padding: 5px 5px 5px 10px;
+      border: 1px solid;
+      text-transform: uppercase;
+      color: #563b4c;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 2px;
+      width: 100%;
+    }
 
-.search-btn{
-  cursor: pointer;
-  width:10% !important;
-  text-align:center;
-  text-transform: uppercase;
-  background-color:#f18c8e;
-}
+    .appointment_form2 .list_location select {
+      margin: 2px 0px 10px 30px;
+      height: 40px !important;
+      left: -15px;
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      padding: 7px 50px 7px 10px;
+      border: 1px solid;
+      text-transform: uppercase;
+      color: #563b4c;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 2px;
+      width: 112%;
+    }
 
-.search-btn:hover{
-  font-weight:bold;
-}
-</style>
+    .search-btn {
+      cursor: pointer;
+      width: 10% !important;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #f18c8e;
+    }
+
+    .search-btn:hover {
+      font-weight: bold;
+    }
+  </style>
 </body>
 
 </html>
-
