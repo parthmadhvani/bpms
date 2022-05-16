@@ -25,7 +25,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -67,7 +67,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
   }  ?> </p>
 
   
-							 <div class="form-group"> <label for="exampleInputEmail1">Search by Invoice Number or Billing Number</label> <input id="searchdata" type="text" name="searchdata" required="true" class="form-control">
+							 <div class="form-group"> <label for="exampleInputEmail1">Search by Billing Number</label> <input id="searchdata" type="text" name="searchdata" required="true" class="form-control">
 						
 							<br>
 							  <button type="submit" name="search" class="btn btn-primary btn-sm">Search</button> </form> 
@@ -90,7 +90,7 @@ $sdata=$_POST['searchdata'];
 							</thead> <tbody>
 <?php
 $ret=mysqli_query($con,"select distinct  tblcustomers.Name,tblinvoice.BillingId,tblinvoice.PostingDate from  tblcustomers   
-	join tblinvoice on tblcustomers.ID=tblinvoice.Userid  where tblinvoice.BillingId like '%$sdata%'");
+	join tblinvoice on tblcustomers.ID=tblinvoice.Userid  where tblinvoice.BillingId='$sdata'");
 $num=mysqli_num_rows($ret);
 if($num>0){
 $cnt=1;
@@ -144,7 +144,7 @@ $cnt=$cnt+1;
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.js"> </script>

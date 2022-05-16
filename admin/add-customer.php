@@ -39,7 +39,7 @@ echo "<script>alert('Something Went Wrong. Please try again.');</script>";
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -131,7 +131,7 @@ echo "<script>alert('Something Went Wrong. Please try again.');</script>";
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.js"> </script>

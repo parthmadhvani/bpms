@@ -80,7 +80,7 @@ include('includes/dbconnection.php');
           <h1 class="big">Search</h1>
           <span class="subheading">Search</span>
           <h2 class="mb-4">Your Appointment</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          <p>Save your time, find your Appointment</p>
         </div>
       </div>
   </section>
@@ -245,6 +245,7 @@ include('includes/dbconnection.php');
               <td colspan="2">
                 <input type="hidden" name="ID" value="<?php echo $id; ?>">
                 <input type="submit" class="btn-app-submit" name="submit" value="Update Appointment" class="btn-secondary">
+                <input type="submit" class="btn-app-submit" name="cancel" value="Cancel Appointment" class="btn-secondary">
               </td>
             </tr>
           </table>
@@ -264,6 +265,11 @@ include('includes/dbconnection.php');
   
 
   <?php 
+    if(isset($_POST['cancel'])){
+      $id = $_POST['ID'];
+      $sql3 = "DELETE from tblappointment WHERE ID = '$id'";
+      $res3 = mysqli_query($con,$sql3);
+    }
     //check whether the submit button is clicked or not
     if(isset($_POST['submit'])){
         //echo "Button Clicked";
@@ -290,7 +296,8 @@ include('includes/dbconnection.php');
         AptTime = '$apttime',
         Name = '$name',
         Location = '$location',
-        Services = '$chk'
+        Services = '$chk',
+        Status = ''
         WHERE ID = '$id'
         ";
 
@@ -341,6 +348,7 @@ include('includes/dbconnection.php');
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+
   <script>
 	  var checkList = document.getElementById('list1');
 checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {

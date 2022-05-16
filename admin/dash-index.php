@@ -22,7 +22,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -34,14 +34,14 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 	</script>
 <!--//end-animate-->
 <!-- chart -->
-<script src="js/Chart.js"></script>
+<!-- <script src="js/Chart.js"></script> -->
 <!-- //chart -->
 <!--Calender-->
 <link rel="stylesheet" href="css/clndr.css" type="text/css" />
-<script src="js/underscore-min.js" type="text/javascript"></script>
-<script src= "js/moment-2.2.1.js" type="text/javascript"></script>
-<script src="js/clndr.js" type="text/javascript"></script>
-<script src="js/site.js" type="text/javascript"></script>
+<!-- <script src="js/underscore-min.js" type="text/javascript"></script> -->
+<!-- <script src= "js/moment-2.2.1.js" type="text/javascript"></script> -->
+<!-- <script src="js/clndr.js" type="text/javascript"></script> -->
+<!-- <script src="js/site.js" type="text/javascript"></script> -->
 <!--End Calender-->
 <!-- Metis Menu -->
 <script src="js/metisMenu.min.js"></script>
@@ -264,7 +264,7 @@ $totalsale+=$total_sale;
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.js"> </script>

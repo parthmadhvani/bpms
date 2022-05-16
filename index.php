@@ -1,6 +1,6 @@
 <?php 
 include('includes/dbconnection.php');
-// session_start();
+session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 if(isset($_POST['submit']))
@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
     if ($query) {
 	$ret=mysqli_query($con,"select AptNumber from tblappointment where Email='$email' and  PhoneNumber='$phone'");
 	$result=mysqli_fetch_array($ret);
-	$_SESSION['aptno']=$result['AptNumber'];
+	$_SESSION['aptno']= $aptnumber;
  echo "<script>window.location.href='thank-you.php'</script>";	
   }
   else
@@ -247,73 +247,3 @@ if(isset($_POST['submit']))
 
 
 
-<style>
-/* .dropdown-check-list {
-  display: inline-block;
-  height: 60px !important;
-  width:103%;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 12px;
-}
-
-.dropdown-check-list .anchor {
-  position: relative;
-  left:-19px;
-  cursor: pointer;
-  display: inline-block;
-  padding: 5px 20px 5px 17px;
-  border: none;
-  text-transform: uppercase;
-  color: #563b4c;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.dropdown-check-list .anchor:after {
-  position: absolute;
-  content: "";
-  border-left: 2px solid black;
-  border-top: 2px solid black;
-  padding: 5px;
-  right: 10px;
-  top: 20%;
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  color: red;
-  font-weight: 100000;
-  margin-left:10%;
-}
-
-.dropdown-check-list .anchor:active:after {
-  right: 8px;
-  top: 21%;
-}
-
-.dropdown-check-list ul.items {
-  padding: 2px;
-  display: none;
-  margin: 0;
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.dropdown-check-list ul.items li {
-  list-style: none;
-}
-
-.services_index{
-	text-align: left;
-}
-
-.dropdown-check-list.visible .anchor {
-  color: #0094ff;
-}
-
-.dropdown-check-list.visible .items {
-  display: block;
-  text-align: left;
-} */
-</style>

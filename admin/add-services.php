@@ -16,17 +16,16 @@ if(isset($_POST['submit']))
     $query=mysqli_query($con, "insert into  tblservices(ServiceName,Cost) value('$sername','$cost')");
     if ($query) {
     	echo "<script>alert('Service has been added.');</script>"; 
-    		echo "<script>window.location.href = 'add-services.php'</script>";   
-    $msg="";
-  }
-  else
+    	echo "<script>window.location.href = 'add-services.php'</script>";   
+    }
+    else
     {
     echo "<script>alert('Something Went Wrong. Please try again.');</script>";  	
     }
 
   
 }
-  ?>
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -43,7 +42,7 @@ if(isset($_POST['submit']))
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -79,14 +78,13 @@ if(isset($_POST['submit']))
 						</div>
 						<div class="form-body">
 							<form method="post">
-								<p style="font-size:16px; color:red" align="center"> <?php if($msg){
-    echo $msg;
-  }  ?> </p>
+								
 
   
 							 <div class="form-group"> <label for="exampleInputEmail1">Service Name</label> <input type="text" class="form-control" id="sername" name="sername" placeholder="Service Name" value="" required="true"> </div> <div class="form-group"> <label for="exampleInputPassword1">Cost</label> <input type="text" id="cost" name="cost" class="form-control" placeholder="Cost" value="" required="true"> </div>
 							
-							  <button type="submit" name="submit" class="btn btn-default">Add</button> </form> 
+							  <button type="submit" name="submit" class="btn btn-default">Add</button> 
+							</form> 
 						</div>
 						
 					</div>
@@ -118,7 +116,7 @@ if(isset($_POST['submit']))
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.js"> </script>

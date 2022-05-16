@@ -1,12 +1,11 @@
 <?php
 session_start();
-// error_reporting(0);
+error_reporting(0);
 include('includes/dbconnection.php');
 ?>
 
 <!DOCTYPE html>
 
-<!--Cafe search section start-->
 <section class="">
             <div class="">
                 <?php 
@@ -18,9 +17,7 @@ include('includes/dbconnection.php');
                 <h2 class = "cream">Appointment on Your Search <a href="#" class="text-white">"<?php echo $search; ?>"</a></h2>
             </div>
     </section>
-    <!--Cafe search section ends-->
 
-    <!--Cafe Menu section start-->
     <section class="">
         <div class="">
             <h2 class="">Search</h2>
@@ -113,6 +110,5 @@ include('includes/dbconnection.php');
             <div class="clearfix"></div>
         </div>
     </section>
-    <!--Cafe Menu section ends-->
 
 <?php include('partials-front/footer.php'); ?>

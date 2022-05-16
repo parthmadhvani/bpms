@@ -24,8 +24,6 @@ $details=$_POST['details'];
     {
       $msg="Something Went Wrong. Please try again";
     }
-
-  
 }
   ?>
 <!DOCTYPE HTML>
@@ -44,7 +42,7 @@ $details=$_POST['details'];
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -94,24 +92,12 @@ while ($row=mysqli_fetch_array($ret)) {
   
 							 <div class="form-group"> <label for="exampleInputEmail1">Name</label> <input type="text" class="form-control" id="name" name="name"  value="<?php  echo $row['Name'];?>" required="true"> </div> <div class="form-group"> <label for="exampleInputPassword1">Email</label> <input type="text" id="email" name="email" class="form-control"  value="<?php  echo $row['Email'];?>" required="true"> </div>
 							 <div class="form-group"> <label for="exampleInputPassword1">Mobile Number</label> <input type="text" id="mobilenum" name="mobilenum" class="form-control"  value="<?php  echo $row['MobileNumber'];?>" required="true"> </div>
-							 <div class="form-group"> <label for="exampleInputPassword1">Gender</label> <?php if($row['Gender']=="Male")
-{?><input type="radio" id="gender" name="gender" value="Male" checked="true">Male
+							 <div class="form-group"> <label for="exampleInputPassword1">Gender</label> 
+							<input type="radio" id="gender" name="gender" value="Male" checked="true">Male
 
                      <input type="radio" name="gender" value="Female">Female
                      <input type="radio" name="gender" value="Transgender">Transgender
-                   <?php } ?>
-<?php if($row['Gender']=="Female")
-{?><input type="radio" id="gender" name="gender" value="Male" >Male
-
-                     <input type="radio" name="gender" value="Female" checked="true">Female
-                     <input type="radio" name="gender" value="Transgender">Transgender
-                   <?php } 
-
-                    else {?>
- <input type="radio" id="gender" name="gender" value="Male" >Male
-  <input type="radio" name="gender" value="Female" >Female
-  <input type="radio" name="gender" value="Transgender" checked="true">Transgender
-                   <?php }?>
+                  
                    <div class="form-group"> <label for="exampleInputEmail1">Details</label> <textarea type="text" class="form-control" id="details" name="details" placeholder="Details" required="true" rows="12" cols="4"><?php  echo $row['Details'];?></textarea> </div>
                    <div class="form-group"> <label for="exampleInputPassword1">Creation Date</label> <input type="text" id="" name="" class="form-control"  value="<?php  echo $row['CreationDate'];?>" readonly='true'> </div>
 
@@ -148,7 +134,7 @@ while ($row=mysqli_fetch_array($ret)) {
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.js"> </script>

@@ -59,7 +59,7 @@ while ($row=mysqli_fetch_array($ret)) {
           <div class="col-md-12 text-center">
 
             <p>
-  2020 &copy; Barber Appointment System  </p>
+  2022 &copy; BarberKing </p>
           </div>
         </div>
       </div>

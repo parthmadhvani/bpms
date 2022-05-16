@@ -25,7 +25,7 @@ if (strlen($_SESSION['bpmsaid']==0)) {
 <!-- //font-awesome icons -->
  <!-- js-->
 <script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
+<!-- <script src="js/modernizr.custom.js"></script> -->
 <!--webfonts-->
 <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <!--//webfonts--> 
@@ -158,7 +158,7 @@ $gtotal+=$subtotal;
 		</script>
 	<!--scrolling js-->
 	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<!-- <script src="js/scripts.js"></script> -->
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
 	<script src="js/bootstrap.js"> </script>
@@ -167,7 +167,7 @@ function CallPrint(strid) {
 var prtContent = document.getElementById("exampl");
 var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
 WinPrint.document.write(prtContent.innerHTML);
-WinPrint.document.close();
+//WinPrint.document.close();
 WinPrint.focus();
 WinPrint.print();
 WinPrint.close();
